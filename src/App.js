@@ -18,7 +18,13 @@ const styles = {
     // flexGrow: 1,
     display: 'flex',
   },
+  test: {
+    // flexGrow: 1,
+    width: `${drawerWidth}%`,
+    flexGrow: 1,
+  },
   grow: {
+    
     flexGrow: 1,
   },
   menuButton: {
@@ -26,14 +32,15 @@ const styles = {
     marginRight: 20,
   },
   drawer: {
-    width: `${drawerWidth}%`,
-    flexGrow: 1,
+   
+    display: 'flex',
+    flexdirection: 'row',
   },
   appBar: {
     width: '100%',
   },
   appBarShift: {
-   width: '85%',
+ //  width: '85%',
    marginLeft: `${drawerWidth}%`,
   //  transition:  2,
     //transition: theme.transitions.create(['margin', 'width'], {
@@ -80,14 +87,14 @@ function Index() {
   render(){
     return (
       <Router>
-         <div className={styles.root}>
+         <div >
           {/*<nav>*/}
         <AppBar position="static"  style={this.state.open?styles.appBarShift:styles.appBar} >
           <Toolbar>
-            <IconButton className={styles.menuButton} color="inherit" aria-label="Menu" onClick={this.handleDrawerIcon}>
+            <IconButton style={styles.menuButton} color="inherit" aria-label="Menu" onClick={this.handleDrawerIcon}>
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" color="inherit" className={styles.grow}>
+            <Typography variant="h6" color="inherit" style={styles.grow}>
               News
             </Typography>
             <Button color="inherit">Login</Button>
@@ -99,7 +106,7 @@ function Index() {
           anchor="left"
           open={this.state.open}
         >
-         
+         <div className={styles.test}>
          <IconButton onClick={this.handleDrawerIcon}>
               <ChevronLeftIcon />
           </IconButton>
@@ -114,6 +121,7 @@ function Index() {
               <Link to="/users/">Users</Link>
             </li>
           </ul>
+          </div>
         </Drawer>
         <div style={this.state.open?styles.appBarShift:styles.appBar} >
         <switch>
