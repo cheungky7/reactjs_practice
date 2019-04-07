@@ -7,6 +7,8 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Drawer from '@material-ui/core/Drawer';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+//import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
 const styles = {
   root: {
@@ -70,6 +72,9 @@ function Index() {
           anchor="left"
           open={this.state.open}
         >
+         <IconButton onClick={this.handleDrawerIcon}>
+              <ChevronLeftIcon />
+          </IconButton>
         <ul>
             <li>
               <Link to="/">Home</Link>
