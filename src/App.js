@@ -8,11 +8,15 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Drawer from '@material-ui/core/Drawer';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+// import classNames from 'classnames';
 //import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+
+const drawerWidth = 15;
 
 const styles = {
   root: {
-    flexGrow: 1,
+    // flexGrow: 1,
+    display: 'flex',
   },
   grow: {
     flexGrow: 1,
@@ -21,6 +25,21 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   },
+  drawer: {
+    width: `${drawerWidth}%`,
+    flexGrow: 1,
+  },
+  appBar: {
+    width: '100%',
+  },
+  appBarShift: {
+   width: '85%',
+   marginLeft: `${drawerWidth}%`,
+  //  transition:  2,
+    //transition: theme.transitions.create(['margin', 'width'], {
+   //   easing: theme.transitions.easing.easeOut,
+  //    duration: theme.transitions.duration.enteringScreen,
+    },
 };
 
 function Index() {
@@ -35,6 +54,8 @@ function Index() {
     return <h2>Users</h2>;
   }
 
+ 
+
   class App extends React.Component {
 
     constructor(props) {
@@ -48,7 +69,12 @@ function Index() {
      this.setState({open: !this.state.open});
 
     }
+/*
+   <AppBar position="static"  className={classNames(styles.appBar, {
+            [styles.appBarShift]: this.state.open,
+          })}>
 
+*/
 
 
   render(){
@@ -56,7 +82,7 @@ function Index() {
       <Router>
          <div className={styles.root}>
           {/*<nav>*/}
-        <AppBar position="static">
+        <AppBar position="static"  style={this.state.open?styles.appBarShift:styles.appBar} >
           <Toolbar>
             <IconButton className={styles.menuButton} color="inherit" aria-label="Menu" onClick={this.handleDrawerIcon}>
               <MenuIcon />
@@ -68,10 +94,12 @@ function Index() {
           </Toolbar>
         </AppBar>
         <Drawer
+          style={styles.drawer}
           variant="persistent"
           anchor="left"
           open={this.state.open}
         >
+         
          <IconButton onClick={this.handleDrawerIcon}>
               <ChevronLeftIcon />
           </IconButton>
@@ -87,11 +115,13 @@ function Index() {
             </li>
           </ul>
         </Drawer>
+        <div style={this.state.open?styles.appBarShift:styles.appBar} >
         <switch>
           <Route path="/" exact component={Index} />
           <Route path="/about/" component={About} />
           <Route path="/users/" component={Users} />
         </switch>
+        </div>
         </div>
       </Router>
     );
