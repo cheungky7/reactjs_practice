@@ -11,7 +11,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 // import classNames from 'classnames';
 //import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
-const drawerWidth = 15;
+const drawerWidth = 150;
 
 const styles = {
   root: {
@@ -20,7 +20,7 @@ const styles = {
   },
   test: {
     // flexGrow: 1,
-    width: `${drawerWidth}%`,
+    width: `${drawerWidth}px`,
     flexGrow: 1,
   },
   grow: {
@@ -41,7 +41,7 @@ const styles = {
   },
   appBarShift: {
  //  width: '85%',
-   marginLeft: `${drawerWidth}%`,
+   marginLeft: `${drawerWidth}px`,
   //  transition:  2,
     //transition: theme.transitions.create(['margin', 'width'], {
    //   easing: theme.transitions.easing.easeOut,
@@ -106,7 +106,7 @@ function Index() {
           anchor="left"
           open={this.state.open}
         >
-         <div className={styles.test}>
+         <div style={styles.test}>
          <IconButton onClick={this.handleDrawerIcon}>
               <ChevronLeftIcon />
           </IconButton>
@@ -124,11 +124,11 @@ function Index() {
           </div>
         </Drawer>
         <div style={this.state.open?styles.appBarShift:styles.appBar} >
-        <switch>
+      
           <Route path="/" exact component={Index} />
           <Route path="/about/" component={About} />
           <Route path="/users/" component={Users} />
-        </switch>
+      
         </div>
         </div>
       </Router>
