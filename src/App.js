@@ -14,17 +14,10 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 const drawerWidth = 150;
 
 const styles = {
-  root: {
-    // flexGrow: 1,
-    display: 'flex',
-  },
-  test: {
+
+  drawerInner: {
     // flexGrow: 1,
     width: `${drawerWidth}px`,
-    flexGrow: 1,
-  },
-  grow: {
-    
     flexGrow: 1,
   },
   menuButton: {
@@ -32,7 +25,6 @@ const styles = {
     marginRight: 20,
   },
   drawer: {
-   
     display: 'flex',
     flexdirection: 'row',
   },
@@ -40,12 +32,7 @@ const styles = {
     width: '100%',
   },
   appBarShift: {
- //  width: '85%',
    marginLeft: `${drawerWidth}px`,
-  //  transition:  2,
-    //transition: theme.transitions.create(['margin', 'width'], {
-   //   easing: theme.transitions.easing.easeOut,
-  //    duration: theme.transitions.duration.enteringScreen,
     },
 };
 
@@ -76,28 +63,17 @@ function Index() {
      this.setState({open: !this.state.open});
 
     }
-/*
-   <AppBar position="static"  className={classNames(styles.appBar, {
-            [styles.appBarShift]: this.state.open,
-          })}>
-
-*/
 
 
   render(){
     return (
       <Router>
-         <div >
-          {/*<nav>*/}
+         <div>
         <AppBar position="static"  style={this.state.open?styles.appBarShift:styles.appBar} >
           <Toolbar>
             <IconButton style={styles.menuButton} color="inherit" aria-label="Menu" onClick={this.handleDrawerIcon}>
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" color="inherit" style={styles.grow}>
-              News
-            </Typography>
-            <Button color="inherit">Login</Button>
           </Toolbar>
         </AppBar>
         <Drawer
@@ -106,7 +82,7 @@ function Index() {
           anchor="left"
           open={this.state.open}
         >
-         <div style={styles.test}>
+         <div style={styles.drawerInner}>
          <IconButton onClick={this.handleDrawerIcon}>
               <ChevronLeftIcon />
           </IconButton>
