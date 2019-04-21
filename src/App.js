@@ -16,6 +16,9 @@ const drawerWidth = 150;
 
 const styles = {
 
+  root:{
+    backgroundColor: 'blue',
+  },
   drawerInner: {
     // flexGrow: 1,
     width: `${drawerWidth}px`,
@@ -74,8 +77,8 @@ function Index() {
 
   render(){
     return (
-      <Router>
-         <div>
+      <Router style={styles.root}>
+         <div >
         <AppBar position="static"  style={this.state.open?styles.appBarShift:styles.appBar} >
           <Toolbar>
             <IconButton style={styles.menuButton} color="inherit" aria-label="Menu" onClick={this.handleDrawerIcon}>
