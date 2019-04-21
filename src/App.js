@@ -2,12 +2,13 @@ import React from 'react';
 import  { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+// import Typography from '@material-ui/core/Typography';
+//import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Drawer from '@material-ui/core/Drawer';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import InputForm from './pages/Inputform';
 // import classNames from 'classnames';
 //import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
@@ -102,6 +103,9 @@ function Index() {
             <li>
               <Link style={styles.link} to="/users/">Users</Link>
             </li>
+            <li>
+              <Link style={styles.link} to="/form/">Form</Link>
+            </li>
           </ul>
           </div>
         </Drawer>
@@ -110,6 +114,8 @@ function Index() {
           <Route path="/" exact component={Index} />
           <Route path="/about/" component={About} />
           <Route path="/users/" component={Users} />
+          <Route path="/form/" component={InputForm} />
+          
       
         </div>
         </div>
