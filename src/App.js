@@ -19,6 +19,12 @@ const styles = {
     // flexGrow: 1,
     width: `${drawerWidth}px`,
     flexGrow: 1,
+    backgroundColor: 'black',
+    color: 'white',
+    fontWeight: 'bold',
+  },
+  link: {
+    color: 'white',
   },
   menuButton: {
     marginLeft: -12,
@@ -88,13 +94,13 @@ function Index() {
           </IconButton>
         <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link style={styles.link} to="/">Home</Link>
+            </li>
+            <li> 
+              <Link style={styles.link} to="/about/">About</Link>
             </li>
             <li>
-              <Link to="/about/">About</Link>
-            </li>
-            <li>
-              <Link to="/users/">Users</Link>
+              <Link style={styles.link} to="/users/">Users</Link>
             </li>
           </ul>
           </div>
