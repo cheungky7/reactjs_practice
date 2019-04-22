@@ -8,7 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Drawer from '@material-ui/core/Drawer';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import InputForm from './pages/Inputform';
+import GridLayout from './pages/GridLayout';
 // import classNames from 'classnames';
 //import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
@@ -107,7 +107,7 @@ function Index() {
               <Link style={styles.link} to="/users/">Users</Link>
             </li>
             <li>
-              <Link style={styles.link} to="/form/">Form</Link>
+              <Link style={styles.link} to="/Grid/">GridLayout</Link>
             </li>
           </ul>
           </div>
@@ -117,7 +117,7 @@ function Index() {
           <Route path="/" exact component={Index} />
           <Route path="/about/" component={About} />
           <Route path="/users/" component={Users} />
-          <Route path="/form/" component={InputForm} />
+          <Route path="/Grid/" component={GridLayout} />
           
       
         </div>
