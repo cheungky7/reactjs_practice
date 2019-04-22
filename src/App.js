@@ -9,6 +9,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Drawer from '@material-ui/core/Drawer';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import GridLayout from './pages/GridLayout';
+import FlexLayout from './pages/FlexLayout';
 // import classNames from 'classnames';
 //import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
@@ -109,6 +110,9 @@ function Index() {
             <li>
               <Link style={styles.link} to="/Grid/">GridLayout</Link>
             </li>
+            <li>
+              <Link style={styles.link} to="/Flex/">FlexLayout</Link>
+            </li>
           </ul>
           </div>
         </Drawer>
@@ -118,7 +122,7 @@ function Index() {
           <Route path="/about/" component={About} />
           <Route path="/users/" component={Users} />
           <Route path="/Grid/" component={GridLayout} />
-          
+          <Route path="/Flex/" component={FlexLayout} />
       
         </div>
         </div>

@@ -15,7 +15,7 @@ const style = {
   boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
 };
 
-class InputForm extends React.Component {
+class GridLayout extends React.Component {
     render() {
       return (
         <div className="root1">
@@ -45,4 +45,4 @@ class InputForm extends React.Component {
   }
 
 
-  export default InputForm;
+  export default GridLayout;
