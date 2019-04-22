@@ -19,20 +19,24 @@ class InputForm extends React.Component {
     render() {
       return (
         <div className="root1">
-           <Grid container spacing={0}>
-            <Grid item xs={6} sm={6}>
-              <div className="GridInside" align="center" >xs=6 sm=6</div>
+           <Grid container spacing={0}
+             alignItems='center'
+             direction= 'row'
+             justify='center'
+           >
+            <Grid item xs={6} sm={6} align="center">
+              <div className="GridInside"  >xs=6 sm=6</div>
             </Grid>
-            <Grid item xs={6} sm={6}>
-              <div className="GridInside" align="center">
+            <Grid item xs={6} sm={6} align="center" >
+              <div className="GridInside" >
                 <Button style={style}>inline-style</Button>
               </div>
             </Grid>
-            <Grid item xs={6} sm={6}>
-              <div className="GridInside" align="center">xs=6 sm=6</div>
+            <Grid item xs={6} sm={6} align="center">
+              <div className="GridInside" >xs=6 sm=6</div>
             </Grid>
-            <Grid item xs={6} sm={6}>
-              <div className="GridInside" align="center">xs=6 sm=6</div>
+            <Grid item xs={6} sm={6} align="center">
+              <div className="GridInside" >xs=6 sm=6</div>
             </Grid>
            </Grid>
         </div>
