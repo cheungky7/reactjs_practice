@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import  { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -8,10 +8,13 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Drawer from '@material-ui/core/Drawer';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import GridLayout from './pages/GridLayout';
-import FlexLayout from './pages/FlexLayout';
-// import classNames from 'classnames';
-//import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+// import GridLayout from './pages/GridLayout';
+// import FlexLayout from './pages/FlexLayout';
+const GridLayout = lazy(() => import('./pages/GridLayout'));
+const FlexLayout = lazy(() => import('./pages/FlexLayout'));
+
+
+
 
 const drawerWidth = 150;
 
@@ -117,13 +120,13 @@ function Index() {
           </div>
         </Drawer>
         <div style={this.state.open?styles.appBarShift:styles.appBar} >
-      
+        <Suspense fallback={<div>Loading...</div>}>
           <Route path="/" exact component={Index} />
           <Route path="/about/" component={About} />
           <Route path="/users/" component={Users} />
           <Route path="/Grid/" component={GridLayout} />
           <Route path="/Flex/" component={FlexLayout} />
-      
+        </Suspense>
         </div>
         </div>
       </Router>
