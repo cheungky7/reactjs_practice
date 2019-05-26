@@ -3,6 +3,8 @@ import Grid from '@material-ui/core/Grid';
 import './GridLayout.css'
 import Button from '@material-ui/core/Button';
 //import Paper from '@material-ui/core/Paper';
+import TextField from '@material-ui/core/TextField';
+import InputBase from '@material-ui/core/InputBase';
 
 const style = {
  // background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
@@ -37,6 +39,17 @@ class GridLayout extends React.Component {
             </Grid>
             <Grid item xs={6} sm={6} align="center">
               <div className="GridInside" >xs=6 sm=6</div>
+            </Grid>
+            <Grid item xs={6} sm={6} align="left">
+              param1
+            </Grid>
+            <Grid item xs={6} sm={6} align="right">
+            {/*<TextField
+              id="standard-number" 
+              type="number"
+              margin="normal"
+            />*/}
+             <InputBase  defaultValue="0" />
             </Grid>
            </Grid>
         </div>
