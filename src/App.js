@@ -8,11 +8,12 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Drawer from '@material-ui/core/Drawer';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import RXJSTest from './pages/RXJSTEST/rxjstest';
 // import GridLayout from './pages/GridLayout';
 // import FlexLayout from './pages/FlexLayout';
 const GridLayout = lazy(() => import('./pages/GridLayout'));
 const FlexLayout = lazy(() => import('./pages/FlexLayout'));
-
+//const RXJSTest = lazy(() => import('./pages/RXJSTEST/rxjstest'));
 
 
 
@@ -22,6 +23,7 @@ const styles = {
 
   root:{
     backgroundColor: 'blue',
+    //backgroundColor: 'rgba(255,0,0,1)',
   },
   drawerInner: {
     // flexGrow: 1,
@@ -41,12 +43,15 @@ const styles = {
   drawer: {
     display: 'flex',
     flexdirection: 'row',
+   
   },
   appBar: {
     width: '100%',
+    backgroundColor: 'rgba(255,0,0,1)',
   },
   appBarShift: {
    marginLeft: `${drawerWidth}px`,
+   backgroundColor: 'rgba(255,0,0,1)',
     },
 };
 
@@ -116,6 +121,9 @@ function Index() {
             <li>
               <Link style={styles.link} to="/Flex/">FlexLayout</Link>
             </li>
+            <li>
+              <Link style={styles.link} to="/rxjs/">RXJS</Link>
+            </li>
           </ul>
           </div>
         </Drawer>
@@ -126,6 +134,7 @@ function Index() {
           <Route path="/users/" component={Users} />
           <Route path="/Grid/" component={GridLayout} />
           <Route path="/Flex/" component={FlexLayout} />
+          <Route path="/rxjs/" component={RXJSTest} />
         </Suspense>
         </div>
         </div>
