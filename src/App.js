@@ -8,13 +8,13 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Drawer from '@material-ui/core/Drawer';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import RXJSTest from './pages/RXJSTEST/rxjstest';
+//import RXJSTest from './pages/RXJSTEST/rxjstest';
 // import GridLayout from './pages/GridLayout';
 // import FlexLayout from './pages/FlexLayout';
 const GridLayout = lazy(() => import('./pages/GridLayout'));
 const FlexLayout = lazy(() => import('./pages/FlexLayout'));
-//const RXJSTest = lazy(() => import('./pages/RXJSTEST/rxjstest'));
-
+const RXJSTest = lazy(() => import('./pages/RXJSTEST/rxjstest'));
+const PureRXJS = lazy(() => import('./pages/PURERXJS/purerxjs'));
 
 
 const drawerWidth = 150;
@@ -124,6 +124,9 @@ function Index() {
             <li>
               <Link style={styles.link} to="/rxjs/">RXJS</Link>
             </li>
+            <li>
+              <Link style={styles.link} to="/purerxjs/">PURERXJS</Link>
+            </li>
           </ul>
           </div>
         </Drawer>
@@ -135,6 +138,7 @@ function Index() {
           <Route path="/Grid/" component={GridLayout} />
           <Route path="/Flex/" component={FlexLayout} />
           <Route path="/rxjs/" component={RXJSTest} />
+          <Route path="/purerxjs/" component={PureRXJS} />
         </Suspense>
         </div>
         </div>
