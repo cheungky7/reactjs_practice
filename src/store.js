@@ -6,21 +6,24 @@ import rootEpic from './epic/index';
 const epicMiddleware = createEpicMiddleware();
 
 
-/*
-export default function configureStore() {
-    const store = createStore(
+
+ function configureStore() {
+    const storetemp = createStore(
       rootReducer,
       applyMiddleware(epicMiddleware)
     );
   
     epicMiddleware.run(rootEpic);
   
-    return store;
-  }*/
+    return storetemp;
+  }
 
+  /*
   const store = createStore(
     rootReducer,
     applyMiddleware(epicMiddleware)
   );
+  */
+const store=configureStore();
 
-  export default store;
+ export default store;
